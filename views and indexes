@@ -1,0 +1,18 @@
+select * from customer;
+
+
+-- creating a virtual/duplicate table from the table   .. a copy is created
+create view bharath as select * from customer;
+select * from bharath;
+
+
+-- creating a virtual/duplicate row from the table   .. a copy is created
+create view charan as select cus_id,cus_name,contact_name,country from customer where country = "usa";
+select * from charan;
+
+select * from bharath;
+select * from charan;
+
+
+-- creating index ...for fast search
+create index rahul on customer(cus_name);
